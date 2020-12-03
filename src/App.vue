@@ -13,19 +13,15 @@
         <v-btn icon>
           <v-icon>mdi-dots-vertical</v-icon>
         </v-btn>
+        <router-link to="/register">Registrarse</router-link>
       </v-toolbar>
-      <HelloWorld/>
+      
+      <router-view></router-view>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld';
-
 export default {
   name: 'App',
-
-  components: {
-    HelloWorld,
-  },
 };
 </script>

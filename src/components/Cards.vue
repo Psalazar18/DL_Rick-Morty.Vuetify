@@ -15,7 +15,7 @@
 
 <script>
 export default {
-  name: 'HelloWorld',
+  name: 'Cards',
   data() {
     return {
       Personajes: [
