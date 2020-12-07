@@ -6,6 +6,10 @@ import vuetify from './plugins/vuetify';
 import firebase from 'firebase';
 import { firebaseConfig } from "./config/firebaseConfig";
 firebase.initializeApp(firebaseConfig);
+export const db = firebase.firestore();
+import ElementUI from 'element-ui';
+import 'element-ui/lib/theme-chalk/index.css'
+Vue.use(ElementUI);
 
 Vue.config.productionTip = false
 

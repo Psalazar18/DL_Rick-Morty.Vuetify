@@ -1,4 +1,5 @@
 <template>
+<v-app>
   <v-form ref="form" v-model="valid" lazy-validation @submit.prevent="register">
     <v-container>
         <h1 class="text-center">Registrate</h1>
@@ -11,11 +12,13 @@
             </v-col>
         </v-row>
         <div>
-            <v-btn color="success" class="mr-4" type="submit">Registrar</v-btn>
+            <v-btn color="primary" class="mr-4" type="submit">Registrar</v-btn>
             <v-btn color="error" class="mr-4" @click="reset"> Reset</v-btn>
+            <v-btn color="success" class="mr-4" @click="goBack"> Go Back</v-btn>
         </div>
     </v-container>
   </v-form>
+</v-app>
 </template>
 
 <script>
@@ -45,6 +48,9 @@ name: 'Register',
         reset() {
             this.$refs.form.reset()
         },
+        goBack(){
+            this.$router.push('/login')
+        }
     },
 
 }

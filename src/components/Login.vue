@@ -1,4 +1,5 @@
 <template>
+<v-app>
   <v-form ref="form" v-model="valid" lazy-validation @submit.prevent="login">
     <v-container>
         <h1 class="text-center">Inicia Sesión</h1>
@@ -7,15 +8,15 @@
                 <v-text-field v-model="email" :rules="emailRules" label="Email" type="email" required></v-text-field>
             </v-col>
             <v-col cols="12" md="4">
-                <v-text-field v-model="password" label="Password" type="passwords" required></v-text-field>
+                <v-text-field v-model="password" label="Password" type="password" required></v-text-field>
             </v-col>
         </v-row>
-        <div>
             <v-btn color="success" class="mr-4" type="submit">Login</v-btn>
             <v-btn color="error" class="mr-4" @click="reset"> Reset</v-btn>
-        </div>
+            <v-btn color="primary" class="mr-4" @click="redirect"> Register</v-btn>
     </v-container>
   </v-form>
+</v-app>
 </template>
 
 <script>
@@ -55,6 +56,9 @@ export default {
         reset() {
             this.$refs.form.reset()
         },
+        redirect(){
+            this.$router.push('/register')
+        }
     },
 
 }
